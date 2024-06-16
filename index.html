@@ -3,195 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Haven - Your Book Recommendation Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f9f9f9;
-        }
-
-        header {
-            background: #333;
-            color: white;
-            padding: 10px 0;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-        }
-
-        header nav ul li {
-            margin: 0 15px;
-        }
-
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .hero {
-            background: url('hero-image.jpg') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero .btn {
-            background: #ff69b4; /* Pink */
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-
-        .hero .btn:hover {
-            background: #ff1493; /* Darker pink */
-        }
-
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        #about, #books, #contact {
-            background: #fff;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .book {
-            background: #e0f7fa; /* Light cyan */
-            padding: 20px;
-            margin: 20px;
-            display: inline-block;
-            width: calc(33.333% - 40px);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        form label {
-            margin-top: 10px;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            max-width: 500px;
-            padding: 10px;
-            margin-top: 5px;
-            border: 2px solid #007BFF; /* Neon blue */
-            border-radius: 5px;
-        }
-
-        form button {
-            background: #007BFF; /* Neon blue */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background 0.3s ease;
-        }
-
-        form button:hover {
-            background: #0056b3; /* Darker neon blue */
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
-        }
-    </style>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#books">Books</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <h1>Welcome to Book Haven</h1>
-        <p>Discover your next great read.</p>
-        <a href="#books" class="btn">Explore Books</a>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>At Book Haven, we believe in the power of books to transform lives. Our mission is to connect readers with books they'll love.</p>
-    </section>
-
-    <section id="books">
-        <h2>Recommended Books</h2>
-        <div class="book">
-            <h3>Book Title One</h3>
-            <p>Author: Jane Doe</p>
-            <p>A captivating story about ...</p>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="task-entry">
+            <input type="text" id="task-name" placeholder="Task name">
+            <input type="date" id="task-date">
+            <select id="task-priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <select id="task-category">
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="other">Other</option>
+            </select>
+            <button id="add-task-btn">Add Task</button>
         </div>
-        <div class="book">
-            <h3>Book Title Two</h3>
-            <p>Author: John Smith</p>
-            <p>An intriguing tale of ...</p>
-        </div>
-        <div class="book">
-            <h3>Book Title Three</h3>
-            <p>Author: Emily Johnson</p>
-            <p>An epic journey through ...</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="#">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p>Email: <a href="mailto:Bookshaven123@gmail.com">Bookshaven123@gmail.com</a></p>
-        <p>Phone: <a href="tel:9432167543">9432167543</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Book Haven. All rights reserved.</p>
-    </footer>
-
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+        <ul id="task-list"></ul>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
